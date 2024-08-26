@@ -4,3 +4,4 @@
   ansible.builtin.package:
     name: "{{ cron_package }}"
     state: present
+  become: true

@@ -5,9 +5,11 @@
     name: "{{ cron_service_name }}"
     masked: false
   when: ansible_service_mgr == "systemd"
+  become: true
 
 - name: Configuring service
   ansible.builtin.service:
     name: "{{ cron_service_name }}"
     state: "{{ cron_service_state }}"
     enabled: "{{ cron_service_enabled }}"
+  become: true

@@ -14,6 +14,7 @@
     user: "{{ item.user | default(omit) }}"
     weekday: "{{ item.weekday | default(omit) }}"
   with_items: "{{ cron_tasks }}"
+  become: true
 
 - name: Configuring cron variables
   community.general.cronvar:
@@ -26,3 +27,4 @@
     insertbefore: "{{ item.insertbefore | default(omit) }}"
     user: "{{ item.user | default(omit) }}"
   with_items: "{{ cron_vars }}"
+  become: true
