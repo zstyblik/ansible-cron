@@ -1,6 +1,6 @@
 ---
 
 - name: Installing package
-  package:
+  ansible.builtin.package:
     name: "{{ cron_package }}"
     state: present

@@ -3,8 +3,8 @@
 # http://www.ansibleworks.com/docs/playbooks.html#handlers-running-operations-on-change
 #
 
-- name: restart cron
-  service:
+- name: Restart cron
+  ansible.builtin.service:
     name: "{{ cron_service_name }}"
     state: restarted
   when: cron_service_state != 'stopped'

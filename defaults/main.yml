@@ -16,7 +16,7 @@
 # list of cron entries (@see http://docs.ansible.com/cron_module.html)
 cron_tasks: []
 # start on boot
-cron_service_enabled: yes
+cron_service_enabled: true
 # current state: started, stopped
 cron_service_state: started
 #

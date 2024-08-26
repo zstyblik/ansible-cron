@@ -41,6 +41,7 @@ before_install:
 script:
   - container_id=$(mktemp)
   # Start The Built Container In The Background
+  # yamllint disable-line rule:line-length
   - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/${role}:ro ${run_opts} ansiblecheck/ansiblecheck:"${distribution,,}"-"${distribution_version}" "${init}" > "${container_id}"'
 
   # Ansible syntax check.

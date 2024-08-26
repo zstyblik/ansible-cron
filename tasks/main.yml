@@ -1,27 +1,35 @@
 ---
 
-- import_tasks: vars.yml
+- name: Setup variables
+  ansible.builtin.import_tasks:
+    file: vars.yml
   tags:
     - system
     - cron
     - vars
     - cron-vars
 
-- import_tasks: install.yml
+- name: Install cron
+  ansible.builtin.import_tasks:
+    file: install.yml
   tags:
     - system
     - cron
     - install
     - cron-install
 
-- import_tasks: config.yml
+- name: Configure cron jobs
+  ansible.builtin.import_tasks:
+    file: config.yml
   tags:
     - system
     - cron
     - config
     - cron-config
 
-- import_tasks: service.yml
+- name: Configure cron service
+  ansible.builtin.import_tasks:
+    file: service.yml
   tags:
     - system
     - cron
