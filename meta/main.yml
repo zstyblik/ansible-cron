@@ -39,6 +39,9 @@ galaxy_info:
       versions:
         - jessie
         - stretch
+        - buster
+        - bullseye
+        - bookworm
     - name: EL
       versions:
         - '7'
